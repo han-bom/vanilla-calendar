@@ -177,9 +177,3 @@ class Calendar {
         this.setYearMonth(this.year, this.month);
     }
 }
-
-const calendar = new Calendar(document.getElementById('wrap'), {
-    showPrevMonthDate: true,
-    showNextMonthDate: true,
-    year: 2021,
-});
