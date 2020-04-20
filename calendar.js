@@ -4,7 +4,7 @@ class Calendar {
     month = undefined;
     options = {
         startDay: 0,
-        daySummary: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
         showPrevMonthDate: false,
         showNextMonthDate: false,
         today: undefined, // default is new Date
@@ -52,7 +52,7 @@ class Calendar {
 
 
         let summary = document.createElement('tr');
-        let daySummary = document.createElement('tr');
+        let dayNames = document.createElement('tr');
 
         let summ = document.createElement('th');
 
@@ -64,13 +64,13 @@ class Calendar {
         for (let i = 0; i < 7; i++) {
             let th = document.createElement('th');
 
-            th.innerHTML = this.options.daySummary[i];
+            th.innerHTML = this.options.dayNames[i];
 
-            daySummary.appendChild(th);
+            dayNames.appendChild(th);
         }
 
         thead.appendChild(summary);
-        thead.appendChild(daySummary);
+        thead.appendChild(dayNames);
         table.appendChild(thead);
         table.appendChild(tbody);
         parent.appendChild(table);
