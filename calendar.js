@@ -17,19 +17,19 @@ class Calendar {
     constructor(parent, options) {
         if (parent != null) {
             if (typeof parent != 'object' || !(parent instanceof Element)) {
-                throw Error('parameter is not DOMElement')
+                throw Error('parameter is not DOMElement');
             }
         } else {
-            throw Error('parameter is NULL')
+            throw Error('parameter is NULL');
         }
 
         if (options != null) {
             if (typeof options != 'object') {
-                throw Error('options is not Object')
+                throw Error('options is not Object');
             }
 
             if (options.today && options.today instanceof Date != true) {
-                throw Error('options.today is not Date')
+                throw Error('options.today is not Date');
             }
 
             this.options = {...this.options, ...options};
@@ -59,7 +59,7 @@ class Calendar {
         let title = document.createElement('th');
 
         title.colSpan = 7;
-        title.append(this.year, this.options.yearName, this.month + 1, this.options.monthName)
+        title.append(this.year, this.options.yearName, this.month + 1, this.options.monthName);
 
         titleWrap.appendChild(title);
 
@@ -148,7 +148,7 @@ class Calendar {
         this.month = month;
 
         this.summary.innerHTML = '';
-        this.summary.append(year, '년 ', month + 1, '월')
+        this.summary.append(year, '년 ', month + 1, '월');
 
         this.recreateCalendar(year, month);
     }
