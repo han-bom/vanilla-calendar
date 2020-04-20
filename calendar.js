@@ -5,6 +5,8 @@ class Calendar {
     options = {
         startDay: 0,
         dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        yearName: '',
+        monthName: '',
         showPrevMonthDate: false,
         showNextMonthDate: false,
         today: undefined, // default is new Date
@@ -57,7 +59,7 @@ class Calendar {
         let summ = document.createElement('th');
 
         summ.colSpan = 7;
-        summ.append(this.year, '년 ', this.month + 1, '월')
+        summ.append(this.year, this.options.yearName, this.month + 1, this.options.monthName)
 
         summary.appendChild(summ);
 
