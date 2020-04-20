@@ -174,6 +174,6 @@ class Calendar {
     }
 
     format(year, month) {
-        return this.options.format.replace(/yyyy/gi, year).replace(/mm/gi, month);
+        return this.options.format.replace(/yyyy/gi, year).replace(/mm/gi, month < 10 ? '0'+month : month);
     }
 }
