@@ -23,6 +23,7 @@ class Calendar {
             dayNames: ['일', '월', '화', '수', '목', '금', '토'],
             yearName: '',
             monthName: '',
+            format: 'YYYY-MM',
             showPrevMonthDate: false,
             showNextMonthDate: false,
             today: undefined, // default is new Date
@@ -53,7 +54,7 @@ class Calendar {
         let title = document.createElement('th');
 
         title.colSpan = 7;
-        title.append(this.year, this.options.yearName, this.month + 1, this.options.monthName);
+        title.innerHTML(this.format(this.year, this.month));
 
         titleWrap.appendChild(title);
 
@@ -137,12 +138,11 @@ class Calendar {
         this.createCalendar(year, month);
     }
 
-    setYearMonth(year,month) {
+    setYearMonth(year, month) {
         this.year = year;
         this.month = month;
 
-        this.summary.innerHTML = '';
-        this.summary.append(year, '년 ', month + 1, '월');
+        this.summary.innerHTML = this.format(year, month);
 
         this.recreateCalendar(year, month);
     }
@@ -171,5 +171,9 @@ class Calendar {
         }
 
         this.setYearMonth(this.year, this.month);
+    }
+
+    format(year, month) {
+        return this.options.format.replace(/yyyy/gi, year).replace(/mm/gi, month);
     }
 }
