@@ -54,7 +54,7 @@ class Calendar {
         let title = document.createElement('th');
 
         title.colSpan = 7;
-        title.innerHTML(this.format(this.year, this.month));
+        title.innerHTML = this.format(this.year, this.month);
 
         titleWrap.appendChild(title);
 
