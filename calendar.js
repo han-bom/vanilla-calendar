@@ -16,19 +16,19 @@ class Calendar {
             if (options.today && options.today instanceof Date != true) {
                 throw Error('options.today is not Date');
             }
-
-            this.options = Object.assign({
-                startDay: 0,
-                dayNames: ['일', '월', '화', '수', '목', '금', '토'],
-                yearName: '',
-                monthName: '',
-                showPrevMonthDate: false,
-                showNextMonthDate: false,
-                today: undefined, // default is new Date
-                year: undefined, // default is today.getFullYear()
-                month: undefined, // default is today.getMonth()
-            }, options);
         }
+
+        this.options = Object.assign({
+            startDay: 0,
+            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            yearName: '',
+            monthName: '',
+            showPrevMonthDate: false,
+            showNextMonthDate: false,
+            today: undefined, // default is new Date
+            year: undefined, // default is today.getFullYear()
+            month: undefined, // default is today.getMonth()
+        }, options);
 
         this.today = this.options.today ?? new Date();
         this.year = this.options.year ?? this.today.getFullYear();
