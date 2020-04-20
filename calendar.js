@@ -53,15 +53,15 @@ class Calendar {
         let tbody = document.createElement('tbody');
 
 
-        let summary = document.createElement('tr');
+        let titleWrap = document.createElement('tr');
         let dayNames = document.createElement('tr');
 
-        let summ = document.createElement('th');
+        let title = document.createElement('th');
 
-        summ.colSpan = 7;
-        summ.append(this.year, this.options.yearName, this.month + 1, this.options.monthName)
+        title.colSpan = 7;
+        title.append(this.year, this.options.yearName, this.month + 1, this.options.monthName)
 
-        summary.appendChild(summ);
+        titleWrap.appendChild(title);
 
         for (let i = 0; i < 7; i++) {
             let th = document.createElement('th');
@@ -71,13 +71,13 @@ class Calendar {
             dayNames.appendChild(th);
         }
 
-        thead.appendChild(summary);
+        thead.appendChild(titleWrap);
         thead.appendChild(dayNames);
         table.appendChild(thead);
         table.appendChild(tbody);
         parent.appendChild(table);
 
-        this.summary = summ;
+        this.title = title;
         this.table = table;
         this.thead = thead;
         this.tbody = tbody;
