@@ -174,6 +174,10 @@ class Calendar {
     }
 
     format(year, month) {
-        return this.options.format.replace(/yyyy/gi, year).replace(/mm/gi, month < 10 ? '0'+month : month);
+        return this.options.format
+            .replace(/yyyy/gi, year)
+            .replace(/yy/gi, year.toString().slice(2))
+            .replace(/mm/gi, month < 10 ? '0'+month : month)
+            .replace(/m/gi, month);
     }
 }
