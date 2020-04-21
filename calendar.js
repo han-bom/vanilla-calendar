@@ -20,7 +20,13 @@ class Calendar {
 
         this.options = Object.assign({
             startDay: 0,
-            dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+            dayNames: {
+                abbreviated: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+                short: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+                wide: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+                standAlone: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
+            },
+            dayNameType: 'short',
             yearName: '',
             monthName: '',
             format: 'YYYY-MM',
@@ -61,7 +67,7 @@ class Calendar {
         for (let i = 0; i < 7; i++) {
             let th = document.createElement('th');
 
-            th.innerHTML = this.options.dayNames[i];
+            th.innerHTML = this.options.dayNames[this.options.dayNameType][i];
 
             dayNames.appendChild(th);
         }
