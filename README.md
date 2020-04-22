@@ -3,5 +3,12 @@ calendar library on vanillia js
 
 # example
 ```
-let calendar = new Calendar(document.getByElementId('wrap'));
+let options = {
+  year: 2020,
+  month: 4
+};
+let calendar = new Calendar(document.getByElementId('wrap'), options);
 ```
+
+# options
+
