@@ -19,7 +19,6 @@ class Calendar {
         }
 
         this.options = Object.assign({
-            startDay: 0,
             dayNames: {
                 abbreviated: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
                 short: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
@@ -27,8 +26,6 @@ class Calendar {
                 standAlone: ['S', 'M', 'T', 'W', 'T', 'F', 'S']
             },
             dayNameType: 'short',
-            yearName: '',
-            monthName: '',
             format: 'YYYY-MM',
             showPrevMonthDate: false,
             showNextMonthDate: false,
