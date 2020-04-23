@@ -14,8 +14,11 @@ let calendar = new Calendar(document.getByElementId('wrap'), options);
 ```new Calendar(parent[, options])```
 
 ## Parameters
-__*```parent```*__
+**```parent```**  
+A string that specifies the parent of element to be created
 
+**```options```**  
+An object containing any custom settings that you want to apply to the calendar. The possible options are
 
 
 # Options
