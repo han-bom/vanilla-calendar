@@ -11,7 +11,7 @@ let calendar = new Calendar(document.getByElementId('wrap'), options);
 ```
 
 # Syntax
-```new Calendar(parent[, options])```
+`new Calendar(parent[, options])`
 
 ### Parameters
 **`parent`**  
